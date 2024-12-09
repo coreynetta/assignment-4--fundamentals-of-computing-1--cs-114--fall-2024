@@ -35,3 +35,26 @@ boolean checkGameOver() {
           return true;
         }
   }
+  if (checkLine(board[0][0], board[1][1], board[2][2]) ||
+      checkLine(board[0][2], board[1][1], board[2][0])) {
+        announceWinner();
+        return true;
+      }
+      if (isBoardFull()) {
+        println("It's a draw!");
+        gameOver = true;
+        return true;
+      }
+      println("The game is still in play.");
+      return false;
+}
+
+boolean checkLine(char a, char b, char c) {
+  return a != ' ' && a == b && b == c;
+}
+
+void announceWinner() {
+  println((board[1][1] == 'X' ? "Computer" : "User") + " wins!");
+  gameOver = true;
+}
+

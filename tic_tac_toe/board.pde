@@ -9,7 +9,7 @@ boolean makeMove(int box, boolean isComputer) {
   int row = box / BOARD_SIZE;
   int col = box % BOARD_SIZE;
   if (board[row][col] == ' ') {
-    board[row][col] = isComputer ? 'X' : 'O'; // Use 'O' instead of '0'
+    board[row][col] = isComputer ? 'X' : 'O'; 
     return true;
   }
   return false;
@@ -27,7 +27,6 @@ void computerTurn() {
 }
 
 boolean checkGameOver() {
-  // Check rows, columns, and diagonals
   for (int i = 0; i < BOARD_SIZE; i++) {
     if (checkLine(board[i][0], board [i][1], board[i][2]) ||
         checkLine(board[0][i], board[1][i], board[2][i])) {

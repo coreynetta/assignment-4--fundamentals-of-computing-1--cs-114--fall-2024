@@ -5,9 +5,9 @@ void initializeBoard() {
     }
   }
 }
-boolean makeMove(int cell, boolean isComputer) {
-  int row = cell / BOARD_SIZE;
-  int col = cell % BOARD_SIZE;
+boolean makeMove(int box, boolean isComputer) {
+  int row = box / BOARD_SIZE;
+  int col = box % BOARD_SIZE;
   if (board[row][col] == ' ') {
     board[row][col] = isComputer ? 'X' : 'O'; // Use 'O' instead of '0'
     return true;

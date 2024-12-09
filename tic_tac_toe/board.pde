@@ -15,3 +15,14 @@ boolean makeMove(int cell, boolean isComputer) {
   return false;
 }
 
+void computerTurn() {
+  for (int r = 0; r < BOARD_SIZE; r++) { 
+    for (int c = 0; c < BOARD_SIZE; c++) {
+      if (board[r][c] == ' ') {
+        board[r][c] = 'X';
+        return;
+      }
+    }
+  }
+}
+
